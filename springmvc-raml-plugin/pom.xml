@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.phoenixnap.oss</groupId>
+		<groupId>com.github.jenssaade</groupId>
 		<artifactId>springmvc-raml-parent</artifactId>
 		<version>0.10.3-fork-SNAPSHOT</version>
 	</parent>
@@ -44,7 +44,7 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.phoenixnap.oss</groupId>
+			<groupId>com.github.jenssaade</groupId>
 			<artifactId>springmvc-raml-parser</artifactId>
 			<version>${project.version}</version>
 		</dependency>	
