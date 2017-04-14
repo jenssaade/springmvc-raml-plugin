@@ -53,6 +53,7 @@
 	</scm>
 	
 	<properties>
+		<maven.test.skip>true</maven.test.skip>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<powermock.version>1.6.2</powermock.version>
 		<maven.core.version>3.3.9</maven.core.version>
