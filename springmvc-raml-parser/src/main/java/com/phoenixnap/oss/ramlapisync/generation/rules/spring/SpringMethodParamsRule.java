@@ -81,7 +81,8 @@ public class SpringMethodParamsRule extends MethodParamsRule {
         JVar jVar = super.paramQueryForm(paramMetaData, generatableType);
         JAnnotationUse jAnnotationUse;
         if (paramMetaData.getRamlParam() != null && paramMetaData.getRamlParam() instanceof RamlUriParameter) {
-            jVar.annotate(PathVariable.class);
+            jAnnotationUse = jVar.annotate(PathVariable.class);
+            jAnnotationUse.param("name", paramMetaData.getName());
             return jVar;
         } else if (paramMetaData.getRamlParam() != null && paramMetaData.getRamlParam() instanceof RamlHeader) {
             jAnnotationUse = jVar.annotate(RequestHeader.class);
