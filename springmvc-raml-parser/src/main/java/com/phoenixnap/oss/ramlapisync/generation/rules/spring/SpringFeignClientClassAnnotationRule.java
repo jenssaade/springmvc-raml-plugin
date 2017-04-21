@@ -54,7 +54,7 @@ public class SpringFeignClientClassAnnotationRule implements Rule<JDefinedClass,
     }
     
     private String getClientName(ApiResourceMetadata controllerMetadata) {
-    	String name = controllerMetadata.getResourceName();
+    	String name = "${feignclient." + controllerMetadata.getResourceName().toLowerCase() + ".serviceId}";
     	return name;
         /*
     	if (name == null || name.length() == 0) {
