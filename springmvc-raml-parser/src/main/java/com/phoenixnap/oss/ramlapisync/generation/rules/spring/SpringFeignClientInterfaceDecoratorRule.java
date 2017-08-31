@@ -60,6 +60,7 @@ public class SpringFeignClientInterfaceDecoratorRule implements Rule<JCodeModel,
                 .setClassRule(new SpringFeignClientInterfaceDeclarationRule())
                 .setMethodCommentRule(new MethodCommentRule())
                 .addMethodAnnotationRule(new SpringRequestMappingMethodAnnotationRule())
+//                .addFieldDeclarationRule(new SpringFeignClientServiceIdFieldDeclarationRule())
                 .setMethodSignatureRule(new ControllerMethodSignatureRule(
                         new SpringFeignClientResponseTypeRule(),
                         new SpringMethodParamsRule())

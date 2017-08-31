@@ -129,10 +129,7 @@ public class RamlTypeHelper {
 	 * @return True if this is an external type (ie schema or other)
 	 */
 	public static boolean isSchemaType(TypeDeclaration type) {
-		if (type != null && type instanceof ExternalTypeDeclaration) {
-    		return true;
-    	} 
-		return false;
+		return type != null && type instanceof ExternalTypeDeclaration;
 	}
 	
 	/**
@@ -237,7 +234,12 @@ public class RamlTypeHelper {
 			public String toXmlSchema() {
 				return null;
 			}
-			
+
+			@Override
+			public String toJsonSchema() {
+				return null;
+			}
+
 			@Override
 			public Boolean required() {
 				return true;
