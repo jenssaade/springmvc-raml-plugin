@@ -44,3 +44,4 @@ The SpringMVC-RAML plugin is released under version 2.0 of the [Apache License][
 [JDK8 build]: http://www.oracle.com/technetwork/java/javase/downloads
 [Maven]: http://maven.apache.org/
 [Issue]: https://github.com/phoenixnap/springmvc-raml-plugin/issues
+
