@@ -110,6 +110,11 @@ public class SpringMvcEndpointGeneratorMojo extends AbstractMojo {
     @Parameter(property="basePackage", required = true, readonly = true, defaultValue = "")
     protected String basePackage;
 
+
+    @Parameter(property="feignResourceType", required = true, readonly = true, defaultValue = "name")
+    protected String feignResourceType;
+
+
     /**
      * The URI or relative path to the folder/network location containing JSON Schemas
      */
@@ -239,7 +244,9 @@ public class SpringMvcEndpointGeneratorMojo extends AbstractMojo {
         
         RamlParser par = new RamlParser(typeGenerationConfig, getBasePath(loadRamlFromFile), seperateMethodsByContentType, injectHttpHeadersParameter, this.resourceDepthInClassNames);
         Set<ApiResourceMetadata> controllers = par.extractControllers(codeModel, loadRamlFromFile);
-
+        controllers.forEach(controller -> {
+            //controller.
+        });
         if (StringUtils.hasText(outputRelativePath)) {
             if (!outputRelativePath.startsWith(File.separator) && !outputRelativePath.startsWith("/")) {
                 resolvedPath += File.separator;
@@ -414,9 +421,9 @@ public class SpringMvcEndpointGeneratorMojo extends AbstractMojo {
                 try {
                     URLClassLoader urlClassLoader = (URLClassLoader) ClassLoader.getSystemClassLoader();
                     Class<?> urlClass = URLClassLoader.class;
-                    Method method = urlClass.getDeclaredMethod("addURL", new Class[] { URL.class });
+                    Method method = urlClass.getDeclaredMethod("addURL", URL.class);
                     method.setAccessible(true);
-                    method.invoke(urlClassLoader, new Object[] { new File(resolvedPath).toURI().toURL() });
+                    method.invoke(urlClassLoader, new File(resolvedPath).toURI().toURL());
                     return "classpath:/"; // since we have added this folder to the classpath this
                                           // should be used by the plugin
                 }
@@ -475,7 +482,8 @@ public class SpringMvcEndpointGeneratorMojo extends AbstractMojo {
     
     protected PojoGenerationConfig mapGenerationConfigMapping() {
     	PojoGenerationConfig config = new PojoGenerationConfig()
-    										.withPackage(basePackage, null);
+    										.withPackage(basePackage, null)
+                                            .withFeignResourceType(feignResourceType);
     	
     	if (generationConfig != null) {
     		config.apply(generationConfig);

@@ -27,6 +27,7 @@ import com.phoenixnap.oss.ramlapisync.naming.NamingHelper;
 public class PojoGenerationConfig {
 	
 	private String basePackage;
+	private String feignResourceType;
 	private String pojoPackage;
 	
 	//If set to true, Integers will be generated as longs
@@ -43,9 +44,7 @@ public class PojoGenerationConfig {
 	
 	//If set to true, longs will be generated as BigIntegers
 	private boolean useBigIntegers = false;
-		
-		
-	
+
 
 	public String getPojoPackage() {
 		return pojoPackage;
@@ -53,6 +52,7 @@ public class PojoGenerationConfig {
 	public String getBasePackage() {
 		return basePackage;
 	}
+	public String getFeignResourceType() { return feignResourceType; }
 
 	public boolean isUseLongIntegers() {
 		return useLongIntegers;
@@ -85,6 +85,12 @@ public class PojoGenerationConfig {
 			this.pojoPackage = basePackage + NamingHelper.getDefaultModelPackage();
 		}
 		
+		return this;
+	}
+
+	public PojoGenerationConfig withFeignResourceType(String feignResourceType) {
+		this.feignResourceType = feignResourceType;
+
 		return this;
 	}
 	

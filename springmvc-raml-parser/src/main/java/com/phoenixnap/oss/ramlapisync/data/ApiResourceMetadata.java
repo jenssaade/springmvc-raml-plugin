@@ -97,8 +97,12 @@ public class ApiResourceMetadata {
 
 	public String getBasePackage() {
 		return config.getBasePackage();
-	}	
-	
+	}
+
+	public String getFeignResourceType() {
+		return config.getFeignResourceType();
+	}
+
 	public Set<ApiBodyMetadata> getDependencies() {
 		Set<ApiBodyMetadata> dependencies = new LinkedHashSet<>();
 		for (ApiActionMetadata method : apiCalls) {
