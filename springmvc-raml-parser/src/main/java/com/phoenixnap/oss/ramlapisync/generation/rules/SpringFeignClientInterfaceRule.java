@@ -12,9 +12,9 @@
  */
 package com.phoenixnap.oss.ramlapisync.generation.rules;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
 
 import com.phoenixnap.oss.ramlapisync.generation.rules.spring.SpringFeignClientInterfaceDecoratorRule;
+import org.springframework.cloud.openfeign.FeignClient;
 
 /**
  * A code generation Rule that provides a standalone {@link FeignClient}.
