@@ -4,7 +4,7 @@
 
 	<groupId>com.github.jenssaade.springmvc-raml-plugin</groupId>
 	<artifactId>springmvc-raml-parent</artifactId>
-	<version>0.10.3-fork.2</version>
+	<version>0.10.3-fork.3</version>
 	
 	<name>Spring MVC to RAML Synchronizer</name>
 	<description>Parent pom to the SpringMVC RAML Generation/Verification Project</description>
